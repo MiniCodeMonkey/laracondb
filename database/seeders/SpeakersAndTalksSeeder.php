@@ -51,14 +51,13 @@ class SpeakersAndTalksSeeder extends Seeder
         $event = $edition->events()->where('year', 2015)->first();
         $this->addTalk($event, 'Matt Stauffer', 'Leveraging Laravel');
         $this->addTalk($event, 'Eryn O\'Neil', 'When It All Hits The Fan');
-        $this->addTalk($event, 'Jeremy Mikola', 'Artisan Jeopardy: Round 1');
+        $this->addTalk($event, 'Jeremy Mikola', 'Artisan Jeopardy');
         $this->addTalk($event, 'Adam Wathan', 'Chasing "Perfect"');
         $this->addTalk($event, 'Ed Finkler', 'Open Sourcing Mental Illness');
         $this->addTalk($event, 'Gemma Lynn', 'Navigate Your Git Repository');
         $this->addTalk($event, 'Taylor Otwell', 'Keynote');
         $this->addTalk($event, 'Jeffrey Way', 'Things Laravel Made Me Believe');
         $this->addTalk($event, 'Paul M. Jones', 'Same Thing Happens Every Time');
-        $this->addTalk($event, 'Jeremy Mikola', 'Artisan Jeopardy: Round 2');
         $this->addTalk($event, 'Brian Webb', 'Open Source & Company Culture');
         $this->addTalk($event, 'Samantha Geitz', 'Service Oriented Laravel & Lumen');
         $this->addTalk($event, 'Samantha Quiñones', 'Hacking The Human Interface');
@@ -121,7 +120,7 @@ class SpeakersAndTalksSeeder extends Seeder
         $this->addTalk($event, 'Adam Wathan');
         $this->addTalk($event, 'Freek Van der Herten');
         $this->addTalk($event, 'Bobby Elite Bouwmann');
-        $this->addTalk($event, 'JMAC');
+        $this->addTalk($event, 'Jason McCreary');
         $this->addTalk($event, 'Keith Damiani');
         $this->addTalk($event, 'Kaya Thomas');
         $this->addTalk($event, 'Jonathan Reinink');
