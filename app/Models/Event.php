@@ -9,13 +9,24 @@ class Event extends Model
 {
     use HasFactory;
 
-    public function talks()
+    protected $with = ['edition'];
+
+    public function edition()
     {
-        return $this->belongsToMany(Talk::class, 'events_talks');
+        return $this->belongsTo(Edition::class);
     }
 
-    public function speakers()
+    public function talks()
     {
-        return $this->hasManyThrough(Speaker::class, Talk::class);
+        return $this->belongsToMany(Talk::class);
+    }
+
+    public function getSpeakers()
+    {
+        $talks = $this->talks()->with('speakers')->get();
+
+        return $talks->map(fn(Talk $talk) => $talk->speakers)
+            ->flatten()
+            ->unique(fn(Speaker $speaker) => $speaker->id);
     }
 }

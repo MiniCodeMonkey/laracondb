@@ -163,7 +163,7 @@ class SpeakersAndTalksSeeder extends Seeder
         $this->addTalk($event, 'Caleb Porzio', 'Livewire Keynote');
         $this->addTalk($event, 'Jack McDade', 'Design for the Rest of Us');
         $this->addTalk($event, 'Seb Armand', 'Scaling Laravel at Square');
-        $this->addTalk($event, 'Freek', 'Unique Laravel Packages');
+        $this->addTalk($event, 'Freek Van der Herten', 'Unique Laravel Packages');
         $this->addTalk($event, 'Rissa Jackson', 'D&D Strategies for Software Excellence');
         $this->addTalk($event, 'Colin DeCarlo', 'Laravel and AI');
         $this->addTalk($event, 'Daniel Coulbourne', 'Verbs for Laravel');
@@ -211,11 +211,7 @@ class SpeakersAndTalksSeeder extends Seeder
 
     private function getOrCreateTalk(Collection $speakers, ?string $title = null)
     {
-        if (!$title) {
-            return Talk::create();
-        }
-        
-        $talk = Talk::where('title', $title)->first();
+        $talk = $title ? Talk::where('title', $title)->first() : null;
 
         // Check if the talk is associated with the given speakers
         if ($talk) {

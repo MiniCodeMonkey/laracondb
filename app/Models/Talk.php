@@ -9,7 +9,13 @@ class Talk extends Model
 {
     use HasFactory;
 
-    public function speakers() {
-        return $this->belongsToMany(Speaker::class, 'talks_speakers');
+    public function speakers()
+    {
+        return $this->belongsToMany(Speaker::class);
+    }
+
+    public function events()
+    {
+        return $this->belongsToMany(Event::class);
     }
 }

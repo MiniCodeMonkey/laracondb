@@ -1,17 +1,12 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', \App\Http\Controllers\OverviewController::class)->name('overview');
+Route::get('speakers', \App\Http\Controllers\SpeakersController::class)->name('speakers');
+Route::get('speakers/{speaker}', \App\Http\Controllers\SpeakerProfileController::class)->name('speaker');
+Route::get('events/{event}', \App\Http\Controllers\EventProfileController::class)->name('event');
 
 Route::middleware([
     'auth:sanctum',
