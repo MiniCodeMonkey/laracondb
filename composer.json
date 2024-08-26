@@ -11,6 +11,8 @@
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "laravel/vapor-core": "^2.37",
+        "matanyadaev/laravel-eloquent-spatial": "^4.3",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {

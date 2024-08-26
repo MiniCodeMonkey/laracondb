@@ -1,0 +1,15 @@
+id: 64711
+name: laracondb
+environments:
+    production:
+        memory: 1024
+        cli-memory: 512
+        database: vapor
+        runtime: 'php-8.3:al2'
+        build:
+            - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
+            - 'php artisan event:cache'
+            - 'npm ci && npm run build && rm -rf node_modules'
+        deploy:
+            - 'php artisan migrate --force'
+        domain: laracondb.org
