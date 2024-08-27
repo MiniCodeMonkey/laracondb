@@ -11,6 +11,7 @@ class OverviewController extends Controller
     {
         return Inertia::render('Overview', [
             'editions' => Event::with('edition')->get()->groupBy(fn(Event $event) => $event->edition_id)->values(),
+            'map' => asset('map.png')
         ]);
     }
 }

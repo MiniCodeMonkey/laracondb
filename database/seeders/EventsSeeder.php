@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Edition;
+use App\Models\Event;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use MatanYadaev\EloquentSpatial\Objects\Point;
 
 class EventsSeeder extends Seeder
@@ -13,109 +14,105 @@ class EventsSeeder extends Seeder
      */
     public function run(): void
     {
-        $editionId = DB::table('editions')->where('name', 'Laracon US')->value('id');
-        DB::table('events')->insert([
-            [
-                'edition_id' => $editionId,
-                'year' => 2013,
-                'location' => 'Washington DC',
-                'coordinates' => new Point(38.911936, -77.016719),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2014,
-                'location' => 'New York City',
-                'coordinates' => new Point(40.750422, -73.996328),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2015,
-                'location' => 'Lousville, KY',
-                'coordinates' => new Point(38.25247, -85.753812),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2016,
-                'location' => 'Lousville, KY',
-                'coordinates' => new Point(38.25247, -85.753812),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2017,
-                'location' => 'New York City',
-                'coordinates' => new Point(40.750422, -73.996328),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2018,
-                'location' => 'Chicago, IL',
-                'coordinates' => new Point(41.88531, -87.62213),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2019,
-                'location' => 'New York City',
-                'coordinates' => new Point(40.750422, -73.996328),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2023,
-                'location' => 'Nashville, TN',
-                'coordinates' => new Point(36.165688, -86.778098),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2024,
-                'location' => 'Dallas, TX',
-                'coordinates' => new Point(32.781179, -96.790329),
-            ]
-        ]);
+        $edition = Edition::where('name', 'Laracon US')->first();
 
-        $editionId = DB::table('editions')->where('name', 'Laracon EU')->value('id');
-        DB::table('events')->insert([
-            [
-                'edition_id' => $editionId,
-                'year' => 2013,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2014,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2015,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2016,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2017,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            [
-                'edition_id' => $editionId,
-                'year' => 2018,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-            // TODO add 2019-2023 Laracon EU events
-            [
-                'edition_id' => $editionId,
-                'year' => 2024,
-                'location' => 'Amsterdam, NL',
-                'coordinates' => new Point(52.3825, 4.9001),
-            ],
-        ]);
+        $event = new Event();
+        $event->year = 2013;
+        $event->location = 'Washington DC';
+        $event->coordinates = new Point(38.911936, -77.016719);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2014;
+        $event->location = 'New York City';
+        $event->coordinates = new Point(40.750422, -73.996328);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2015;
+        $event->location = 'Lousville, KY';
+        $event->coordinates = new Point(38.25247, -85.753812);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2016;
+        $event->location = 'Lousville, KY';
+        $event->coordinates = new Point(38.25247, -85.753812);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2017;
+        $event->location = 'New York City';
+        $event->coordinates = new Point(40.750422, -73.996328);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2018;
+        $event->location = 'Chicago, IL';
+        $event->coordinates = new Point(41.88531, -87.62213);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2019;
+        $event->location = 'New York City';
+        $event->coordinates = new Point(40.750422, -73.996328);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2023;
+        $event->location = 'Nashville, TN';
+        $event->coordinates = new Point(36.165688, -86.778098);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2024;
+        $event->location = 'Dallas, TX';
+        $event->coordinates = new Point(32.781179, -96.790329);
+        $edition->events()->save($event);
+
+        $edition = Edition::where('name', 'Laracon EU')->first();
+
+        $event = new Event();
+        $event->year = 2013;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2014;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2015;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2016;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2017;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2018;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
+
+        // TODO add 2019-2023 Laracon EU events
+        $event = new Event();
+        $event->year = 2024;
+        $event->location = 'Amsterdam, NL';
+        $event->coordinates = new Point(52.3825, 4.9001);
+        $edition->events()->save($event);
     }
 }
