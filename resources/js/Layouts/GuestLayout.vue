@@ -49,7 +49,7 @@ const showingNavigationDropdown = ref(false);
                 <slot/>
             </main>
 
-            <footer class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center text-sm">
+            <footer class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex items-center text-sm pb-8">
                 Brought to you by the folks from
                 <svg class="mx-1 w-4 inline-block" viewBox="0 0 41.953 48.952"
                      xmlns="http://www.w3.org/2000/svg">
