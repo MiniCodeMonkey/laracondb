@@ -16,10 +16,16 @@ class SpeakersAndTalksSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->seedLaraconUS();
+        $this->seedLaraconEU();
+    }
+
+    private function seedLaraconUS()
+    {
         $edition = Edition::where('name', 'Laracon US')->first();
 
         $event = $edition->events()->where('year', 2013)->first();
-        $this->addTalk($event, ['Taylor Otwell', 'Dayle Rees', 'Shawn McCool'], 'Laracon 2013 Panel Discusion');
+        $this->addTalk($event, ['Taylor Otwell', 'Dayle Rees', 'Shawn McCool'], 'Laracon 2013 Panel Discussion');
         $this->addTalk($event, 'Taylor Otwell', 'Eloquence Evolving');
         $this->addTalk($event, 'Shawn McCool', 'When Programmers Start a Business');
         $this->addTalk($event, 'Eric Barnes', 'The Care & Feeding Of A Robot');
@@ -173,6 +179,162 @@ class SpeakersAndTalksSeeder extends Seeder
         $this->addTalk($event, 'Joe Tannenbaum', 'Terminal UIs');
         $this->addTalk($event, 'Adam Wathan', 'Designing a Component Library');
         $this->addTalk($event, 'Primeagen', 'Developer Excellence');
+    }
+
+    private function seedLaraconEU()
+    {
+        $edition = Edition::where('name', 'Laracon EU')->first();
+
+        $event = $edition->events()->where('year', 2013)->first();
+        $this->addTalk($event, 'Phill Sparks', 'Software Design Patterns in Laravel 4');
+        $this->addTalk($event, 'Jeffrey Way', 'Laravel Testing Tips, Techniques and Pitfalls');
+        $this->addTalk($event, 'Jordi Boggiano', 'In-Depth with Composer');
+        $this->addTalk($event, 'Fabien Potencier', 'Standardization, the Symfony Way');
+        $this->addTalk($event, 'Matthew Machuga', 'Objects, Testing and Responsibility');
+        $this->addTalk($event, 'Ben Corlett', 'Bridging the Gap');
+        $this->addTalk($event, 'Ross Tuck', 'HTTP and Your Angry Dog');
+        $this->addTalk($event, 'Taylor Otwell', 'Building Artisan Commands');
+        $this->addTalk($event, 'Kapil Verma', 'Engineering Complex Applications with Laravel 4');
+        $this->addTalk($event, 'Frank de Jonge', 'The Knowledge of Others');
+
+        $event = $edition->events()->where('year', 2014)->first();
+        $this->addTalk($event, 'Matt Stauffer', 'Sharing Laravel');
+        $this->addTalk($event, 'Erika Heidi', 'Portable Environments with Vagrant');
+        $this->addTalk($event, 'Kirk Bushell', 'Comprehensive Validation with Laravel 4');
+        $this->addTalk($event, 'Ben Corlett', 'Discovering ElasticSearch');
+        $this->addTalk($event, 'Taylor Otwell', 'The State of Laravel');
+        $this->addTalk($event, 'Mathias Verraes', 'Decoupling the Model from the Framework');
+        $this->addTalk($event, 'Rafael Dohms', 'PHP Annotations: They exist!');
+        $this->addTalk($event, 'Kayla Daniels', 'The Code Manifesto: Empowering our Community');
+        $this->addTalk($event, 'Konstantin Kudryashov', 'Design How Your Objects Talk Through Mocking');
+        $this->addTalk($event, 'Igor Wiedler', 'Lisp');
+        $this->addTalk($event, 'Ross Tuck', 'Things I Believe Now That I\'m Old');
+
+
+        $event = $edition->events()->where('year', 2015)->first();
+        $this->addTalk($event, 'Matt Stauffer', 'Keynote');
+        $this->addTalk($event, 'Dries Vints', 'The Laravel Ecosystem');
+        $this->addTalk($event, 'Ben Corlett', 'So You Can Code...Now What?');
+        $this->addTalk($event, 'Frank de Jonge', 'Frontin\' like a Back-er');
+        $this->addTalk($event, 'Adam Wathan', 'Chasing "Perfect"');
+        $this->addTalk($event, 'Taylor Otwell', 'The Tao Of Laravel');
+        $this->addTalk($event, 'Jessica Rose', 'Impostor Syndrome and Individual Competence');
+        $this->addTalk($event, 'Lorna Jane Mitchell', 'Advanced GIT for Developers');
+        $this->addTalk($event, 'Esther Kok', 'Whistleblowing 101');
+        $this->addTalk($event, 'Konstantin Kudryashov', 'Min-maxing Software Costs');
+        $this->addTalk($event, 'Hannes Van De Vreken', 'Package development');
+        $this->addTalk($event, 'Jeffrey Way', 'Things Laravel Made Me Believe');
+
+        $event = $edition->events()->where('year', 2016)->first();
+        $this->addTalk($event, 'Taylor Otwell', 'Keynote');
+        $this->addTalk($event, 'Evan You', 'Modern Frontend with Vue.js');
+        $this->addTalk($event, 'Tihomir Opacic', 'The State Of Content Management');
+        $this->addTalk($event, 'Gabriela D\'avila', 'Making the most out of MySQL');
+        $this->addTalk($event, 'Freek van der Herten', 'Taking care of backups with Laravel');
+        $this->addTalk($event, 'Adam Wathan', 'Curing the common loop');
+        $this->addTalk($event, 'Jon Acker', 'TDD is dead, long live TDD');
+        $this->addTalk($event, 'Mattias Geniar', 'Varnish for PHP developers');
+        $this->addTalk($event, 'Geshan Manandhar', 'Embrace chatops, stop installing deployment software');
+        $this->addTalk($event, 'Matthias Noback', 'Please Understand Me');
+        $this->addTalk($event, 'Hannes Van De Vreken', 'IOC container beyond constructor injection');
+        $this->addTalk($event, 'Abed Halawi', 'The lucid architecture for building scalable applications');
+        $this->addTalk($event, 'Edward Coleridge Smith', 'How to avoid database migration hell');
+        $this->addTalk($event, 'Jeroen vd Gulik', 'How to Effectively grow a Development team');
+        $this->addTalk($event, 'Mitchell van Wijngaarden', 'Future is a thing of the past');
+        $this->addTalk($event, 'Frank de Jonge', 'One Box Doesn\'t fit all');
+        $this->addTalk($event, 'Gemma Cameron', 'Bringing User Stories to Life');
+        $this->addTalk($event, 'Lily Dart', 'No Excuse, User Research');
+        $this->addTalk($event, 'Caryn Humphreys & Jesse O\'Brien', 'Project Utopia');
+        $this->addTalk($event, 'Christophe Willemsen', 'Your own recomendation Engine with Neo4j AND Reco4PHP');
+        $this->addTalk($event, 'Franz Liedke', 'Web accessibility for Artisans');
+
+        $event = $edition->events()->where('year', 2017)->first();
+        $this->addTalk($event, 'Marcel Pociot', 'From zero to multi-platform Chatbot with BotMan');
+        $this->addTalk($event, 'Max Brokman', 'Denormalization With Eloquent: How, Why and When');
+        $this->addTalk($event, 'Jachim Coudenys', 'Write history, keep a diary');
+        $this->addTalk($event, 'Christoph Rumpel', 'Chat Bots');
+        $this->addTalk($event, 'Jeroen van der Gulik', 'Bruce Lee Driven Development');
+        $this->addTalk($event, 'Christopher Pitt', 'Transforming PHP');
+        $this->addTalk($event, 'Povilas Korop', 'Generate Laravel Code and Make Money');
+        $this->addTalk($event, 'Hannes Van De Vreken', 'Code review beyond code style');
+        $this->addTalk($event, 'Rizqi Djamaluddin', 'Bad UX is Not an Option: Intuitive Software by being a Better Developer');
+        $this->addTalk($event, 'Freek van der Herten', 'A Practical Intro into Snapshot Testing');
+        $this->addTalk($event, 'Anna Fohlmeister', 'Concept to Completion: Building a Lumen API handling in Excess of 10M requests per day');
+        $this->addTalk($event, 'Christopher Pitt', 'Monads in PHP');
+        $this->addTalk($event, 'Bobby Bouwmann', 'Laravel Design Patterns');
+        $this->addTalk($event, 'Alfie Carlisle', 'Agile Development in Education');
+        $this->addTalk($event, 'Robert Kilian and Pedro Nogueira', 'Laravel on ABOUT YOU: Philosophies of Development at Scale');
+        $this->addTalk($event, 'Taylor Otwell', 'State of Laravel');
+        $this->addTalk($event, 'Eryn O\'Neil', 'Project Triage: What to Do When Everything Hits the Fan');
+        $this->addTalk($event, 'Freek Van der Herten', 'Building a realtime dashboard with Laravel, Vue and Pusher');
+        $this->addTalk($event, 'Bobby Bouwmann', 'Laravel Design Patterns');
+        $this->addTalk($event, 'Nicolas Grekas', 'Symfony 4 Preview');
+        $this->addTalk($event, 'Julien Bourdeau', 'Build an Airbnb-like search with Laravel, Algolia and Vue.js');
+        $this->addTalk($event, 'Laura Elizabeth', 'Debugging Design: 5 simple design principles to make your UI "not look terrible".');
+        $this->addTalk($event, 'Amo Chohan', '12 tried and tested top tips for better testing');
+        $this->addTalk($event, 'Michiel Gerritsen', 'The introduction to Testing I wish I had.');
+        $this->addTalk($event, 'Dries Vints', 'Building your API with Apiary & Dredd');
+        $this->addTalk($event, 'Luís Cobucci', 'JWT - To authentication & beyond!');
+        $this->addTalk($event, 'Aaron Kunert', 'Beyond tedious meetings: A way to build a self-organized team.');
+        $this->addTalk($event, 'Paweł Lewtak', 'Improve your developer\'s toolset');
+        $this->addTalk($event, 'Femke van Schoonhoven', 'Stop listening to the internet');
+        $this->addTalk($event, 'Povilas Korop', 'How to find / manage remote developers');
+        $this->addTalk($event, 'Evan You', 'Inside Vue Components');
+        $this->addTalk($event, 'Anna Fohlmeister', 'Concept to Completion: Building a Lumen API handling in Excess of 10M requests per day');
+
+        $event = $edition->events()->where('year', 2018)->first();
+        $this->addTalk($event, 'Jenny Shen', 'Build bridges, not walls—Design for users across cultures');
+        $this->addTalk($event, 'Amanda Folson', 'Zero to API with Lumen');
+        $this->addTalk($event, 'Marcel Pociot', 'Alexa, let\'s build a voice powered app');
+        $this->addTalk($event, 'Ross Tuck', 'Everybody Poops');
+        $this->addTalk($event, 'Brent Roose', 'Visual perception of code');
+        $this->addTalk($event, 'Freek van der Herten', 'Intro to laravel event projector');
+        $this->addTalk($event, 'Alex Bilbie', 'Twelve-Factor Apps');
+        $this->addTalk($event, 'Robert Basic', 'IntroDDDuction');
+        $this->addTalk($event, 'Franz Liedke', 'Customizing Laravel');
+        $this->addTalk($event, 'Taylor Dondich', 'Migrating a 15 Year Old Enterprise Application to Laravel: Lessons Learned and Opportunities Gained');
+        $this->addTalk($event, 'Diede Guipers', 'How you could run a flat organisation');
+        $this->addTalk($event, 'Margaret Staples', 'Simplified Continuous Integration with Laravel and Jenkins');
+        $this->addTalk($event, 'Robert Douglass', 'DevOps and the Rebirth of Childhood Innocence');
+        $this->addTalk($event, 'Christoph Rumpel', 'Content Security Policy 101');
+        $this->addTalk($event, 'Freek van der Herten', 'Handling media in a Laravel application');
+        $this->addTalk($event, 'David McKay', 'Kickass Laravel Development with Docker');
+        $this->addTalk($event, 'Taylor Dondich', 'Nintendo Emulation in javascript + Vuejs');
+        $this->addTalk($event, 'Christopher + Erika', '5 [fun] ways to fall in love [again] with code');
+        $this->addTalk($event, 'Rizqi Djamaluddin', 'Fundamentally Flawed: Privacy, People and the Age of Data');
+        $this->addTalk($event, 'Kai Sassnowski', 'Things every developer absolutely, positively needs to know about database indexing');
+        $this->addTalk($event, 'Marten Westphal', 'How we abused PHP and Laravel to do Big Data');
+        $this->addTalk($event, 'Simon Bennett', 'Paying your mortgage with SAAS');
+        $this->addTalk($event, 'Jason Adriaan + Chris Pitt', 'Code as a service');
+        $this->addTalk($event, 'Mattias Geniar', 'Minimum Viable Linux');
+        $this->addTalk($event, 'Marcus Bointon', 'Crypto for Everyone');
+        $this->addTalk($event, 'Norbert Sendetzky', 'High Performance e-commerce with Aimeos');
+        $this->addTalk($event, 'Roy Duineveld', 'Project showcase: Server monitor & DMP');
+        $this->addTalk($event, 'Gabriela Ferrara', 'OMG MySQL 8.0 is out! Are we there yet?');
+        $this->addTalk($event, 'Bobby Bouwmann', 'Laravel Design Patterns');
+        $this->addTalk($event, 'Leo Sjöberg', 'Logs: The insights you always wanted');
+        $this->addTalk($event, 'Mark Starkey', 'How Not to Break a Simple Idea');
+        $this->addTalk($event, 'Krystal Campioni', 'Advanced animations with Vue.js: taking your interface to the next level');
+        $this->addTalk($event, 'Abdala Cerqueira', 'Docker: Multi-stage Multi-Environment');
+        $this->addTalk($event, 'Katerina Trajchevska', 'SOLID Design Principles');
+        $this->addTalk($event, 'Marcel Pociot', 'Extending Laravel Nova');
+        $this->addTalk($event, 'Chris Brown', 'Presenting Skills for Programmers');
+        $this->addTalk($event, 'Saud', 'Gamification');
+        $this->addTalk($event, 'Taylor Otwell', 'State of Laravel');
+
+
+        $event = $edition->events()->where('year', 2024)->first();
+        $this->addTalk($event, 'Jess Archer', 'Laravel Pulse: Behind the Scenes');
+        $this->addTalk($event, 'Luke Downing', 'Lessons From the Laravel Framework');
+        $this->addTalk($event, 'Kévin Dunglas', 'Running Laravel Apps With FrankenPHP');
+        $this->addTalk($event, 'Roman Pronskiy', 'The PHP Foundation');
+        $this->addTalk($event, 'Christoph Rumpel', 'Managing 5000+ Tests Efficiently');
+        $this->addTalk($event, 'Daniel Coulbourne', 'Flip the Switch Slowly');
+        $this->addTalk($event, 'Bobby Bouwmann', 'Surviving Large Applications');
+        $this->addTalk($event, 'Rissa Jackson', 'Window Magic, Command Line Wizardry');
+        $this->addTalk($event, 'Tobias Petry', 'Scaling Databases');
+        $this->addTalk($event, 'Freek Van der Herten', 'Uncharted Packages');
+        $this->addTalk($event, 'Taylor Otwell', 'Laravel Update');
     }
 
     private function addTalk(Event $event, array|string $speakerName, ?string $title = null)

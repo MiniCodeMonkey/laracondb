@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use MatanYadaev\EloquentSpatial\Objects\Point;
@@ -15,7 +14,6 @@ class EventsSeeder extends Seeder
     public function run(): void
     {
         $editionId = DB::table('editions')->where('name', 'Laracon US')->value('id');
-
         DB::table('events')->insert([
             [
                 'edition_id' => $editionId,
@@ -71,6 +69,53 @@ class EventsSeeder extends Seeder
                 'location' => 'Dallas, TX',
                 'coordinates' => new Point(32.781179, -96.790329),
             ]
+        ]);
+
+        $editionId = DB::table('editions')->where('name', 'Laracon EU')->value('id');
+        DB::table('events')->insert([
+            [
+                'edition_id' => $editionId,
+                'year' => 2013,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            [
+                'edition_id' => $editionId,
+                'year' => 2014,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            [
+                'edition_id' => $editionId,
+                'year' => 2015,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            [
+                'edition_id' => $editionId,
+                'year' => 2016,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            [
+                'edition_id' => $editionId,
+                'year' => 2017,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            [
+                'edition_id' => $editionId,
+                'year' => 2018,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
+            // TODO add 2019-2023 Laracon EU events
+            [
+                'edition_id' => $editionId,
+                'year' => 2024,
+                'location' => 'Amsterdam, NL',
+                'coordinates' => new Point(52.3825, 4.9001),
+            ],
         ]);
     }
 }
