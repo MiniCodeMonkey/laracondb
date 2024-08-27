@@ -9,7 +9,7 @@ defineProps({
         type: Array,
     },
     events: {
-        type: Array,
+        type: Object,
     },
 });
 </script>
