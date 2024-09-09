@@ -114,5 +114,20 @@ class EventsSeeder extends Seeder
         $event->location = 'Amsterdam, NL';
         $event->coordinates = new Point(52.3825, 4.9001);
         $edition->events()->save($event);
+
+        $edition = Edition::where('name', 'Laracon IN')->first();
+
+        $event = new Event();
+        $event->year = 2023;
+        $event->location = 'Ahmedabad, GJ';
+        $event->coordinates = new Point(23.0066, 72.4544);
+        $edition->events()->save($event);
+
+        $event = new Event();
+        $event->year = 2024;
+        $event->location = 'Udaipur, RJ';
+        $event->coordinates = new Point(24.6109, 73.6602);
+        $edition->events()->save($event);
+
     }
 }

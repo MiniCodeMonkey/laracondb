@@ -18,6 +18,7 @@ class SpeakersAndTalksSeeder extends Seeder
     {
         $this->seedLaraconUS();
         $this->seedLaraconEU();
+        $this->seedLaraconIN();
     }
 
     private function seedLaraconUS()
@@ -335,6 +336,49 @@ class SpeakersAndTalksSeeder extends Seeder
         $this->addTalk($event, 'Tobias Petry', 'Scaling Databases');
         $this->addTalk($event, 'Freek Van der Herten', 'Uncharted Packages');
         $this->addTalk($event, 'Taylor Otwell', 'Laravel Update');
+    }
+
+    private function seedLaraconIN()
+    {
+        $edition = Edition::where('name', 'Laracon IN')->first();
+
+        $event = $edition->events()->where('year', 2023)->first();
+        $this->addTalk($event, 'Freek Van der Herten', 'Fantastic Functions and where to find them');
+        $this->addTalk($event, 'Jess Archer', 'Building a Service Container From Scratch');
+        $this->addTalk($event, 'Marcel Pociot', 'Give your Laravel app some AI');
+        $this->addTalk($event, 'James Brooks', 'Documenting Laravel APIs');
+        $this->addTalk($event, 'Gaurav Makhecha', 'Journey of a typical Laravel request');
+        $this->addTalk($event, 'Caneco', 'The Hitchhiker\'s Guide to the Laravel Community');
+        $this->addTalk($event, 'Drishti Jain', 'Blockchain breakthrough with PHP');
+        $this->addTalk($event, 'Mohammad Emran', 'Building a Report Engine for Laravel');
+        $this->addTalk($event, 'Joe Dixon', 'Servers? Where We\'re Going, We Don\'t Need Servers!');
+        $this->addTalk($event, 'Nuno Maduro', 'The future of PEST');
+        $this->addTalk($event, 'Christoph Rumpel', 'Getting Started with TDD');
+        $this->addTalk($event, 'Kunal Varma', 'Pluggable Architecture');
+        $this->addTalk($event, 'Shruti Balasa', 'Flex with Tailwind CSS');
+        $this->addTalk($event, 'Bobby Bouwmann', 'Batchable Jobs');
+        $this->addTalk($event, 'Francisco Madeira', 'Build Beautiful CLI Apps Using Termwind');
+        $this->addTalk($event, 'Mitul Golakiya', 'SPA Laravel Apps with Hotwire TurboJS');
+        $this->addTalk($event, 'Taylor Otwell', 'Laravel Updates');
+
+        $event = $edition->events()->where('year', 2024)->first();
+        $this->addTalk($event, 'Freek Van der Herten', 'Uncharted Packages');
+        $this->addTalk($event, 'Daniel Coulbourne', 'Flip the switch slowly');
+        $this->addTalk($event, 'Guus Leeuw', 'Growing your Laravel Application Infrastructure');
+        $this->addTalk($event, 'Jason McCreary', 'Rapid Laravel Development with Blueprint');
+        $this->addTalk($event, 'Joe Dixon', 'Real-Time Laravel');
+        $this->addTalk($event, 'Shruti Balasa', 'New ways of responsive design in Tailwind CSS');
+        $this->addTalk($event, 'Joe Tannenbaum', 'Talkin’ TUIs: Building UIs in the Terminal with Laravel Prompts');
+        $this->addTalk($event, 'Karuna Purohit', 'The Yogic Theory of Training Your Subconscious Mind');
+        $this->addTalk($event, 'Vatsal Shah', 'RED Framework: Cultivating Winners\' Mindset');
+        $this->addTalk($event, 'James Seconde', 'You\'re not Jesse James');
+        $this->addTalk($event, 'Ruchit Patel', 'Think Like an Architect, Build with Laravel');
+        $this->addTalk($event, 'Jess Archer', 'Laravel Pulse: Behind the Scenes');
+        $this->addTalk($event, 'Rissa Jackson', 'Window Magic, Command Line Wizardry');
+        $this->addTalk($event, 'Jason McCreary', 'Refactoring Workshop');
+        $this->addTalk($event, 'Marcel Pociot', 'Parsing PHP for fun and profit');
+        $this->addTalk($event, 'Jilesh Patadiya', 'Unleashing the Power of Serverless Architecture');
+        $this->addTalk($event, 'James Brooks', 'Secrets of the Laravel Team');
     }
 
     private function addTalk(Event $event, array|string $speakerName, ?string $title = null)
